@@ -2,7 +2,7 @@ import React, { useState, useContext, useRef, useEffect } from "react";
 import axios from "axios";
 import Message from "./Message";
 import "./chatbox.css";
-import { ChatContext } from "../context/chatcontext";
+import { ChatContext } from "../context/ChatContext";
 import { BASE_URL } from "../utils/constants";
 
 const USER_ID = "123"; // You can make this dynamic later
