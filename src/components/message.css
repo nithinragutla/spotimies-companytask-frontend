@@ -1,0 +1,16 @@
+.message {
+  padding: 8px 12px;
+  margin: 5px 0;
+  border-radius: 12px;
+  max-width: 80%;
+}
+
+.user {
+  background: #DCF8C6;
+  margin-left: auto;
+}
+
+.bot {
+  background: #ECECEC;
+  margin-right: auto;
+}
