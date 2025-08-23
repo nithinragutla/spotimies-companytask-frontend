@@ -1,13 +1,13 @@
-import React from "react";
-import ChatPage from "./pages/chatpage";
+  import React from "react";
+  import ChatPage from "./pages/chatpage";
 import { ChatProvider } from "./context/chatcontext";
 
-const App = () => {
-  return (
-    <ChatProvider>
-      <ChatPage />
-    </ChatProvider>
-  );
-};
+  const App = () => {
+    return (
+      <ChatProvider>
+        <ChatPage />
+      </ChatProvider>
+    );
+  };
 
-export default App;
+  export default App;
