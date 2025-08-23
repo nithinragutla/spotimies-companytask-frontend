@@ -27,7 +27,7 @@ const ChatBox = () => {
       }
     };
     fetchHistory();
-  }, []);
+    }, [setMessages]);
 
   const sendMessage = async () => {
     if (!input.trim()) return;
