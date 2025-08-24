@@ -1,12 +1,25 @@
-# React + Vite
+🚀 Features:
+Chat UI with user and bot messages
+Context API for global chat state management
+Modular components (ChatBox, Message, Navbar)
+Easy integration with backend APIs
+Ready for deployment on Vercel
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+🛠️ Tech Stack:
+React.js (Vite setup)
+Context API for state management
+CSS for styles
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+📦 Installation & Setup:
+1.Clone the repository and move to frontend folder:
+https://github.com/nithinragutla/spotimies-companytask-frontend.git
 
-## Expanding the ESLint configuration
+2.Install dependencies:
+npm install
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+3.Create a .env file in the root of frontend/ with this content:
+VITE_API_BASE_URL=https://spotimies-companytask-backendcode.vercel.app/api
+
+4.Run the development server:
+npm run dev
