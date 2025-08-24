@@ -56,7 +56,7 @@ const FAQManager = () => {
   }, []);
 
   return (
-    <div className="faq-manager">
+    <div>
       <h2>FAQ Management</h2>
 
       {/* PDF Upload Form */}

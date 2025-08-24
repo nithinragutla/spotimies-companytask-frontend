@@ -5,7 +5,7 @@ import "./ChatPage.css"; // create this file
 
 const ChatPage = () => {
   return (
-    <div className="chat-page">
+    <div className="chat-page" style={{ backgroundColor: "lightgray", minHeight: "100vh", padding: "20px" ,margin: "0"}}>
       <h1 style={{ textAlign: "center", marginBottom: "20px" }}>
         AI Customer Support
       </h1>
