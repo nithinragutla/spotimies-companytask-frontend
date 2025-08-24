@@ -1,22 +1,24 @@
 .chat-layout {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Two equal halves */
-  gap: 20px;
-  max-width: 1000px;
-  margin: 0 auto;
+  grid-template-columns: 1fr 1fr; 
+  /* gap: 20px; */
+  max-width: 100%;
+ justify-items: center;
+ /* align-items: center; */
 }
 
 .faq-section,
 .chat-section {
   background: #fff;
-  padding: 20px;
+  padding: 20px;  
   border-radius: 12px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  
 }
 
 /* Remove duplicate box styling from ChatBox */
 .chat-section .chat-box {
   background: #f9f9f9;
   box-shadow: none;
-  width: 100%;
+ 
 }

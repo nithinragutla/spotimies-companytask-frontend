@@ -1,0 +1,99 @@
+/* FAQManager.css */
+
+.faq-manager {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.faq-manager h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.faq-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.faq-form input[type="text"],
+.faq-form input[type="file"] {
+  padding: 10px 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.faq-form input[type="file"] {
+  padding: 6px 12px;
+}
+
+.faq-form button {
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-green {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-green:hover {
+  background-color: #218838;
+}
+
+.btn-blue {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-blue:hover {
+  background-color: #0069d9;
+}
+
+.faq-list h3 {
+  color: #444;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+}
+
+.faq-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.faq-list li {
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  transition: all 0.2s ease-in-out;
+}
+
+.faq-list li:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.faq-list p {
+  margin: 5px 0;
+}
+
+.faq-list span {
+  font-size: 12px;
+  color: #888;
+  display: block;
+  margin-top: 8px;
+}

@@ -59,6 +59,16 @@ const FAQManager = () => {
     <div className="faq-manager">
       <h2>FAQ Management</h2>
 
+      {/* PDF Upload Form */}
+      <form onSubmit={handleUploadPDF} className="faq-form" >
+        <input
+          type="file"
+          accept="application/pdf"
+          onChange={(e) => setPdfFile(e.target.files[0])}
+        />
+        <button type="submit" className="btn btn-green">
+          Upload PDF
+        </button>
       {/* Manual FAQ Form */}
       <form onSubmit={handleAddFAQ} className="faq-form">
         <input
@@ -80,16 +90,6 @@ const FAQManager = () => {
         </button>
       </form>
 
-      {/* PDF Upload Form */}
-      <form onSubmit={handleUploadPDF} className="faq-form">
-        <input
-          type="file"
-          accept="application/pdf"
-          onChange={(e) => setPdfFile(e.target.files[0])}
-        />
-        <button type="submit" className="btn btn-green">
-          Upload PDF
-        </button>
       </form>
 
       {/* FAQ List */}
