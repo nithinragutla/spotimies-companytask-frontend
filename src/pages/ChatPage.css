@@ -1,14 +1,16 @@
 .chat-layout {
   display: grid;
   grid-template-columns: 1fr 1fr; 
-  /* gap: 20px; */
   max-width: 100%;
- justify-items: center;
- /* align-items: center; */
+  justify-items: center;
+  gap: 20px;
+  padding: 20px;
 }
 
 body {
   margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f7fa;
 }
 
 .faq-section,
@@ -17,16 +19,64 @@ body {
   padding: 20px;  
   border-radius: 12px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.1);
-  
+  transition: all 0.3s ease-in-out;
+  width: 100%;              /* ✅ Full width by default */
+  max-width: 500px;         /* ✅ Limit on larger screens */
+  box-sizing: border-box;   /* ✅ Prevent overflow from padding */
 }
-.faq-section{
+
+.faq-section {
   max-height: 95vh;
-  width: 500px;
+  overflow-y: auto;
 }
 
 /* Remove duplicate box styling from ChatBox */
 .chat-section .chat-box {
   background: #f9f9f9;
   box-shadow: none;
- 
+}
+
+/* ========= Responsive Media Queries ========= */
+
+/* Desktop (≥1200px) */
+@media (min-width: 1200px) {
+  .chat-layout {
+    grid-template-columns: 1fr 1fr;
+  }
+  .faq-section,
+  .chat-section {
+    max-width: 500px;
+  }
+}
+
+/* Tablets (768px–1199px) */
+@media (max-width: 1199px) and (min-width: 768px) {
+  .chat-layout {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+  .faq-section,
+  .chat-section {
+    width: 90%;
+    max-width: 600px;
+    margin-bottom: 20px;
+  }
+}
+
+/* Mobile (<768px) */
+@media (max-width: 767px) {
+  .chat-layout {
+    grid-template-columns: 1fr;
+    justify-items: stretch;
+    padding: 10px;
+  }
+  .faq-section,
+  .chat-section {
+    width: 100%;       /* ✅ Fill mobile screen */
+    max-width: 100%;   /* ✅ No overflow */
+    padding: 15px;
+  }
+  .faq-section {
+    max-height: 70vh;
+  }
 }
