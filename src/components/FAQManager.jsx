@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import "./FAQManager.css";
 import { BASE_URL } from "../utils/constants";
@@ -8,6 +8,9 @@ const FAQManager = () => {
   const [answer, setAnswer] = useState("");
   const [faqs, setFaqs] = useState([]);
   const [pdfFile, setPdfFile] = useState(null);
+
+  // ✅ Ref for file input
+  const fileInputRef = useRef(null);
 
   // Fetch all FAQs
   const fetchFAQs = async () => {
@@ -27,8 +30,10 @@ const FAQManager = () => {
       setQuestion("");
       setAnswer("");
       fetchFAQs();
+      alert("✅ FAQ added successfully!");
     } catch (err) {
       console.error(err);
+      alert("❌ Failed to add FAQ. Please try again.");
     }
   };
 
@@ -44,10 +49,19 @@ const FAQManager = () => {
       await axios.post(`${BASE_URL}/api/faqs/upload-pdf`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
+
       setPdfFile(null);
+
+      // ✅ Reset input field (so filename disappears)
+      if (fileInputRef.current) {
+        fileInputRef.current.value = "";
+      }
+
       fetchFAQs();
+      alert("✅ PDF uploaded successfully!");
     } catch (err) {
       console.error(err);
+      alert("❌ Failed to upload PDF. Please try again.");
     }
   };
 
@@ -56,19 +70,22 @@ const FAQManager = () => {
   }, []);
 
   return (
-    <div>
+    <div className="faq-manager">
       <h2>FAQ Management</h2>
 
       {/* PDF Upload Form */}
-      <form onSubmit={handleUploadPDF} className="faq-form" >
+      <form onSubmit={handleUploadPDF} className="faq-form">
         <input
           type="file"
           accept="application/pdf"
+          ref={fileInputRef}     // ✅ attach ref
           onChange={(e) => setPdfFile(e.target.files[0])}
         />
         <button type="submit" className="btn btn-green">
           Upload PDF
         </button>
+      </form>
+
       {/* Manual FAQ Form */}
       <form onSubmit={handleAddFAQ} className="faq-form">
         <input
@@ -90,21 +107,28 @@ const FAQManager = () => {
         </button>
       </form>
 
-      </form>
+     {/* FAQ List */}
+<div className="faq-list">
+  <h3>All FAQs</h3>
+  {faqs.length === 0 ? (
+    <p className="empty-message">⚠️ No FAQs available</p>
+  ) : (
+    <ul>
+      {faqs.map((faq) => (
+        <li key={faq._id}>
+          <p>
+            <strong>Q:</strong> {faq.question}
+          </p>
+          <p>
+            <strong>A:</strong> {faq.answer}
+          </p>
+          {faq.source && <span>Source: {faq.source}</span>}
+        </li>
+      ))}
+    </ul>
+  )}
+</div>
 
-      {/* FAQ List */}
-      <div className="faq-list">
-        <h3>All FAQs</h3>
-        <ul>
-          {faqs.map((faq) => (
-            <li key={faq._id}>
-              <p><strong>Q:</strong> {faq.question}</p>
-              <p><strong>A:</strong> {faq.answer}</p>
-              {faq.source && <span>Source: {faq.source}</span>}
-            </li>
-          ))}
-        </ul>
-      </div>
     </div>
   );
 };

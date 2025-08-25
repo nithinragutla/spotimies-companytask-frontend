@@ -3,7 +3,6 @@
 /* ===== Base Styles ===== */
 .faq-manager {
   max-width: 900px;
-  margin: 40px auto;
   padding: 25px 20px;
   background: linear-gradient(135deg, #fdfbfb, #ebedee);
   border-radius: 15px;
@@ -24,7 +23,7 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
-  margin-bottom: 40px;
+  /* margin-bottom: 40px; */
 }
 
 .faq-form input[type="text"],
@@ -51,6 +50,7 @@
   cursor: pointer;
   transition: all 0.2s ease;
   font-weight: 500;
+  margin-bottom: 10px;
 }
 
 .btn-green {
@@ -76,17 +76,37 @@
 }
 
 /* ===== FAQ List ===== */
+.faq-list {
+  /* margin-top: 10px; */
+  height: 30vh; 
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background: #f5f2f2;
+  padding: 10px;
+}
+
 .faq-list h3 {
   color: #444;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   font-size: 1.5rem;
   border-bottom: 2px solid #ddd;
   padding-bottom: 6px;
 }
 
+/* ✅ Only UL scrolls inside container */
 .faq-list ul {
+  flex: 1;
   list-style: none;
   padding: 0;
+  margin: 0;
+  overflow-y: auto;
+}
+.empty-message {
+  color: #777;
+  font-style: italic;
+  margin-top: 10px;
 }
 
 .faq-list li {
@@ -94,7 +114,7 @@
   padding: 18px 20px;
   margin-bottom: 15px;
   border-radius: 12px;
-  border: 1px solid #e0e0e0;
+  /* border: 1px solid #6b6a6a; */
   transition: all 0.3s ease;
 }
 
@@ -114,6 +134,20 @@
   color: #666;
   display: block;
   margin-top: 8px;
+}
+
+/* ===== Optional: Custom Scrollbar ===== */
+.faq-list ul::-webkit-scrollbar {
+  width: 8px;
+}
+
+.faq-list ul::-webkit-scrollbar-thumb {
+  background: #bbb;
+  border-radius: 10px;
+}
+
+.faq-list ul::-webkit-scrollbar-thumb:hover {
+  background: #999;
 }
 
 /* ===== Media Queries ===== */

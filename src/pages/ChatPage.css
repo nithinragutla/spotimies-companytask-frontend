@@ -19,6 +19,10 @@ body {
   box-shadow: 0 2px 12px rgba(0,0,0,0.1);
   
 }
+.faq-section{
+  max-height: 95vh;
+  width: 500px;
+}
 
 /* Remove duplicate box styling from ChatBox */
 .chat-section .chat-box {
